@@ -134,7 +134,22 @@ boxplot(Petal.Length ~ Species, data = iris,
         ylab = "Petal Length (cm)",
         col = c("red", "green", "blue"))
 
+######### Resource Test ###########
 
+
+install.packages("modelr")
+library(modelr) 
+library(tidyverse)
+data(iris)
+mod <- lm(Petal.Length ~ Sepal.Length, data = iris)
+iris <- iris %>% add_residuals(mod, "resid")
+head(iris)
+iris <- iris %>% 
+  mutate(log_sepal = log2(Sepal.Length), log_petal = log2(Petal.Length))
+mod_log <- lm(log_petal ~ log_sepal, data = iris)
+summary(mod_log)
+mod_interaction <- lm(Petal.Length ~ Sepal.Width * Petal.Width, data = iris)
+summary(mod_interaction)
 
 
 
