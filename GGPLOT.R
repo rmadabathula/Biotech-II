@@ -159,6 +159,27 @@ ggplot(mpg, aes(cty, hwy, colour = class, shape = factor(cyl))) +
     plot.title = element_text(hjust = .5, size = 16)
   )
 
+ggplot(mpg, aes(x = cty, y = hwy, fill = class)) +
+  geom_violin(alpha = 0.7) + 
+  scale_fill_viridis_d() +  
+  labs(x = "City Mileage (mpg)",
+       y = "Highway Mileage (mpg)",
+       title = "City vs Highway Mileage Across Car Classes") +
+  coord_fixed(1) +  
+  facet_wrap(~ year) +  
+  theme_classic() +
+  theme(
+    legend.position = "bottom",
+    axis.title = element_text(size = 10),
+    axis.text = element_text(size = 10),
+    axis.line = element_line(linewidth = 1),
+    panel.grid.major = element_line(colour = "white"),
+    panel.grid.minor = element_line(colour = "white"),
+    axis.line.x.bottom = element_line(colour = "black"),
+    axis.line.y.left = element_line(colour = "black"),
+    plot.title = element_text(hjust = .5, size = 10)
+  )
+
 
 ggplot(mpg, aes(displ, cyl, colour = trans)) +
   geom_bar() +
