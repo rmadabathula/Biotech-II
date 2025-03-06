@@ -1,0 +1,65 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Mar  4 16:57:55 EST 2025
+
+  System load:  0.0                 Processes:             70
+  Usage of /:   1.5% of 1006.85GB   Users logged in:       0
+  Memory usage: 5%                  IPv4 address for eth0: 172.29.52.191
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/ramyamadabathula/.hushlogin file.
+(base) ramyamadabathula@H107-PN-LT:~$ sudo apt install bcftools
+[sudo] password for ramyamadabathula:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+bcftools is already the newest version (1.19-1build2).
+bcftools set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 104 not upgraded.
+(base) ramyamadabathula@H107-PN-LT:~$ cd /home/ramyamadabathula/NGS_practice/
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools mpileup -Ou -f reference.fa /home/ramyamadabathula/NGS_practice/Alignment_data/sampleA.sorted.ba
+m -o /home/ramyamadabathula/NGS_practice/Alignment_data/sampleA.mileup
+[mpileup] 1 samples in 1 input files
+[mpileup] maximum number of reads per input file set to -d 250
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ cd /home/ramyamadabathula/NGS_practice/Alignment_data/
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice/Alignment_data$ cd ..
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools call -mv -Ob -o variantsA.bcf /home/ramyamadabathula/NGS_practice/Alignment_data/sampleA.mileup
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools view variantsA.bcf> variantsA.vcf
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less variantsA.vcf
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less variantsA.vcf
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools stats variantsA.VCF> summary.txt
+[E::hts_open_format] Failed to open file "variantsA.VCF" : No such file or directory
+Failed to read from variantsA.VCF: No such file or directory
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$  bcftools stats variantsA.VCF> summary.txt
+[E::hts_open_format] Failed to open file "variantsA.VCF" : No such file or directory
+Failed to read from variantsA.VCF: No such file or directory
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools stats variantsA.vcf> summary.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less summary.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less variantsA.vcf
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less summary.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools filter -e 'QUAL<20' -o filtered_by_quality.vcf variantsA.vcf
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools stats filtered_by_quality.vcf> summary.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools filter -e 'DP<10' -o filtered_by_depth.vcf variantsA.vcf
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools stats filtered_by_depth.vcf> summary.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools filter -e 'QUAL<20 || DP<10' -o filtered_variants.vcf variantsA.vcf
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ bcftools stats filtered_variants.vcf> summary.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$  bcftools stats filtered_by_quality.vcf> summary_filtered_quality.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$  bcftools stats filtered_by_depth.vcf> summary_filtered_depth.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$  bcftools stats filtered_variants.vcf> summary_filtered_variants.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$  bcftools stats variantsA.vcf> summary.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less summary_filtered_variants.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less summary_filtered_quality.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less summary_filtered_depth.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less summary_filtered_variants.txt
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$
