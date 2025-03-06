@@ -1,0 +1,931 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Feb 25 18:00:23 EST 2025
+
+  System load:  0.0                 Processes:             71
+  Usage of /:   0.6% of 1006.85GB   Users logged in:       0
+  Memory usage: 5%                  IPv4 address for eth0: 172.29.52.191
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/ramyamadabathula/.hushlogin file.
+(base) ramyamadabathula@H107-PN-LT:~$ ls
+ Log.out                               RNA_Seq_Analysis   auto_trim.sh.1      eol.sh                 index.html.1                   ram
+ Miniconda3-latest-Linux-x86_64.sh     RNAstar.sh         auto_trim.sh.2      fastq                  index.html.2                   test.sh
+ Miniconda3-latest-Linux-x86_64.sh.1   RNAstar.sh.1       auto_trim.sh.3      fastq_download.py     'index.html?page=trimmomatic'
+ NGS_practice.zip                      RNAstar.sh.2       bam_list.txt        hs_err_pid128084.log   loop.sh
+ NGS_practice.zip:Zone.Identifier      RNAstar.sh.3       biotech_II.txt      hs_err_pid128150.log   miniconda3
+ Pipeline_Seq                          auto_trim.sh       biotech_class.txt   hs_err_pid128238.log   practice_folder
+(base) ramyamadabathula@H107-PN-LT:~$ less sampleA_R1.fq.gz
+sampleA_R1.fq.gz: No such file or directory
+(base) ramyamadabathula@H107-PN-LT:~$ cd /home/ramyamadabathula/NGS_practice/
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ ls
+example_snp.vcf                  reference.fa:Zone.Identifier      sampleA_R2.fq.gz                  sampleB_R1.fq.gz:Zone.Identifier
+example_snp.vcf:Zone.Identifier  sampleA_R1.fq.gz                  sampleA_R2.fq.gz:Zone.Identifier  sampleB_R2.fq.gz
+reference.fa                     sampleA_R1.fq.gz:Zone.Identifier  sampleB_R1.fq.gz                  sampleB_R2.fq.gz:Zone.Identifier
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ less sampleA_R1.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ sudo apt install fastqc
+[sudo] password for ramyamadabathula:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+fastqc is already the newest version (0.12.1+dfsg-3).
+0 upgraded, 0 newly installed, 0 to remove and 107 not upgraded.
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ fastqc sampleA_R1.fq.gz
+application/gzip
+Started analysis of sampleA_R1.fq.gz
+Approx 5% complete for sampleA_R1.fq.gz
+Approx 10% complete for sampleA_R1.fq.gz
+Approx 15% complete for sampleA_R1.fq.gz
+Approx 20% complete for sampleA_R1.fq.gz
+Approx 25% complete for sampleA_R1.fq.gz
+Approx 30% complete for sampleA_R1.fq.gz
+Approx 35% complete for sampleA_R1.fq.gz
+Approx 40% complete for sampleA_R1.fq.gz
+Approx 45% complete for sampleA_R1.fq.gz
+Approx 50% complete for sampleA_R1.fq.gz
+Approx 55% complete for sampleA_R1.fq.gz
+Approx 60% complete for sampleA_R1.fq.gz
+Approx 65% complete for sampleA_R1.fq.gz
+Approx 70% complete for sampleA_R1.fq.gz
+Approx 75% complete for sampleA_R1.fq.gz
+Approx 80% complete for sampleA_R1.fq.gz
+Approx 85% complete for sampleA_R1.fq.gz
+Approx 90% complete for sampleA_R1.fq.gz
+Approx 95% complete for sampleA_R1.fq.gz
+Analysis complete for sampleA_R1.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ fastqc sampleA_R2.fq.gz
+application/gzip
+Started analysis of sampleA_R2.fq.gz
+Approx 5% complete for sampleA_R2.fq.gz
+Approx 10% complete for sampleA_R2.fq.gz
+Approx 15% complete for sampleA_R2.fq.gz
+Approx 20% complete for sampleA_R2.fq.gz
+Approx 25% complete for sampleA_R2.fq.gz
+Approx 30% complete for sampleA_R2.fq.gz
+Approx 35% complete for sampleA_R2.fq.gz
+Approx 40% complete for sampleA_R2.fq.gz
+Approx 45% complete for sampleA_R2.fq.gz
+Approx 50% complete for sampleA_R2.fq.gz
+Approx 55% complete for sampleA_R2.fq.gz
+Approx 60% complete for sampleA_R2.fq.gz
+Approx 65% complete for sampleA_R2.fq.gz
+Approx 70% complete for sampleA_R2.fq.gz
+Approx 75% complete for sampleA_R2.fq.gz
+Approx 80% complete for sampleA_R2.fq.gz
+Approx 85% complete for sampleA_R2.fq.gz
+Approx 90% complete for sampleA_R2.fq.gz
+Approx 95% complete for sampleA_R2.fq.gz
+Analysis complete for sampleA_R2.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ fastqc sampleB_R2.fq.gz
+application/gzip
+Started analysis of sampleB_R2.fq.gz
+Approx 5% complete for sampleB_R2.fq.gz
+Approx 10% complete for sampleB_R2.fq.gz
+Approx 15% complete for sampleB_R2.fq.gz
+Approx 20% complete for sampleB_R2.fq.gz
+Approx 25% complete for sampleB_R2.fq.gz
+Approx 30% complete for sampleB_R2.fq.gz
+Approx 35% complete for sampleB_R2.fq.gz
+Approx 40% complete for sampleB_R2.fq.gz
+Approx 45% complete for sampleB_R2.fq.gz
+Approx 50% complete for sampleB_R2.fq.gz
+Approx 55% complete for sampleB_R2.fq.gz
+Approx 60% complete for sampleB_R2.fq.gz
+Approx 65% complete for sampleB_R2.fq.gz
+Approx 70% complete for sampleB_R2.fq.gz
+Approx 75% complete for sampleB_R2.fq.gz
+Approx 80% complete for sampleB_R2.fq.gz
+Approx 85% complete for sampleB_R2.fq.gz
+Approx 90% complete for sampleB_R2.fq.gz
+Approx 95% complete for sampleB_R2.fq.gz
+Analysis complete for sampleB_R2.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ fastqc sampleB_R1.fq.gz
+application/gzip
+Started analysis of sampleB_R1.fq.gz
+Approx 5% complete for sampleB_R1.fq.gz
+Approx 10% complete for sampleB_R1.fq.gz
+Approx 15% complete for sampleB_R1.fq.gz
+Approx 20% complete for sampleB_R1.fq.gz
+Approx 25% complete for sampleB_R1.fq.gz
+Approx 30% complete for sampleB_R1.fq.gz
+Approx 35% complete for sampleB_R1.fq.gz
+Approx 40% complete for sampleB_R1.fq.gz
+Approx 45% complete for sampleB_R1.fq.gz
+Approx 50% complete for sampleB_R1.fq.gz
+Approx 55% complete for sampleB_R1.fq.gz
+Approx 60% complete for sampleB_R1.fq.gz
+Approx 65% complete for sampleB_R1.fq.gz
+Approx 70% complete for sampleB_R1.fq.gz
+Approx 75% complete for sampleB_R1.fq.gz
+Approx 80% complete for sampleB_R1.fq.gz
+Approx 85% complete for sampleB_R1.fq.gz
+Approx 90% complete for sampleB_R1.fq.gz
+Approx 95% complete for sampleB_R1.fq.gz
+Analysis complete for sampleB_R1.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ sudo apt install cutadapt
+[sudo] password for ramyamadabathula:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  pigz python3-cutadapt python3-dnaio python3-xopen
+The following NEW packages will be installed:
+  cutadapt pigz python3-cutadapt python3-dnaio python3-xopen
+0 upgraded, 5 newly installed, 0 to remove and 108 not upgraded.
+Need to get 361 kB of archives.
+After this operation, 1303 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65.6 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-xopen all 1.7.0-2 [17.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-dnaio amd64 1.2.0-2build1 [80.4 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-cutadapt amd64 4.4-1build2 [192 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble/universe amd64 cutadapt all 4.4-1build2 [6776 B]
+Fetched 361 kB in 1s (450 kB/s)
+Selecting previously unselected package pigz.
+(Reading database ... 44424 files and directories currently installed.)
+Preparing to unpack .../archives/pigz_2.8-1_amd64.deb ...
+Unpacking pigz (2.8-1) ...
+Selecting previously unselected package python3-xopen.
+Preparing to unpack .../python3-xopen_1.7.0-2_all.deb ...
+Unpacking python3-xopen (1.7.0-2) ...
+Selecting previously unselected package python3-dnaio.
+Preparing to unpack .../python3-dnaio_1.2.0-2build1_amd64.deb ...
+Unpacking python3-dnaio (1.2.0-2build1) ...
+Selecting previously unselected package python3-cutadapt.
+Preparing to unpack .../python3-cutadapt_4.4-1build2_amd64.deb ...
+Unpacking python3-cutadapt (4.4-1build2) ...
+Selecting previously unselected package cutadapt.
+Preparing to unpack .../cutadapt_4.4-1build2_all.deb ...
+Unpacking cutadapt (4.4-1build2) ...
+Setting up pigz (2.8-1) ...
+Setting up python3-xopen (1.7.0-2) ...
+Setting up python3-dnaio (1.2.0-2build1) ...
+Setting up python3-cutadapt (4.4-1build2) ...
+Setting up cutadapt (4.4-1build2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ cutadapt -a AGATCGGAAG -A AGATCGGAAG -m 100 -o sampleA_R1.out.fq.gz -p sampleA_R2.out.fq.gz sampleA_R1.fq
+.gz sampleA_R2.fq.gz
+This is cutadapt 4.4 with Python 3.12.3
+Command line parameters: -a AGATCGGAAG -A AGATCGGAAG -m 100 -o sampleA_R1.out.fq.gz -p sampleA_R2.out.fq.gz sampleA_R1.fq.gz sampleA_R2.fq.gz
+Processing paired-end reads on 1 core ...
+Done           00:00:26     1,445,709 reads @  18.2 µs/read;   3.29 M reads/minute
+Finished in 26.384 s (18.250 µs/read; 3.29 M reads/minute).
+
+=== Summary ===
+
+Total read pairs processed:          1,445,709
+  Read 1 with adapter:               1,173,499 (81.2%)
+  Read 2 with adapter:               1,173,026 (81.1%)
+
+== Read fate breakdown ==
+Pairs that were too short:             925,985 (64.1%)
+Pairs written (passing filters):       519,724 (35.9%)
+
+Total basepairs processed:   422,147,028 bp
+  Read 1:   211,073,514 bp
+  Read 2:   211,073,514 bp
+Total written (filtered):    137,884,791 bp (32.7%)
+  Read 1:    68,968,137 bp
+  Read 2:    68,916,654 bp
+
+=== First read: Adapter 1 ===
+
+Sequence: AGATCGGAAG; Type: regular 3'; Length: 10; Trimmed: 1173499 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10 bp: 1
+
+Bases preceding removed adapters:
+  A: 0.4%
+  C: 0.4%
+  G: 98.9%
+  T: 0.3%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by 'G' extremely often.
+    The provided adapter sequence could be incomplete at its 5' end.
+    Ignore this warning when trimming primers.
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+3       8603    22589.2 0       8603
+4       4131    5647.3  0       4131
+5       3654    1411.8  0       3654
+6       3481    353.0   0       3481
+7       3165    88.2    0       3165
+8       4291    22.1    0       4291
+9       4799    5.5     0       4784 15
+10      3684    1.4     1       3332 352
+11      3791    1.4     1       3529 262
+12      4213    1.4     1       3906 307
+13      3892    1.4     1       3657 235
+14      4902    1.4     1       4576 326
+15      4907    1.4     1       4569 338
+16      4051    1.4     1       3791 260
+17      5981    1.4     1       5619 362
+18      6743    1.4     1       6314 429
+19      5393    1.4     1       5056 337
+20      6095    1.4     1       5668 427
+21      5015    1.4     1       4693 322
+22      4799    1.4     1       4480 319
+23      5062    1.4     1       4722 340
+24      4887    1.4     1       4569 318
+25      5021    1.4     1       4687 334
+26      6098    1.4     1       5700 398
+27      6598    1.4     1       6138 460
+28      5526    1.4     1       5157 369
+29      6080    1.4     1       5684 396
+30      6178    1.4     1       5753 425
+31      5464    1.4     1       5104 360
+32      8882    1.4     1       8296 586
+33      9210    1.4     1       8633 577
+34      7294    1.4     1       6740 554
+35      7519    1.4     1       6992 527
+36      7204    1.4     1       6706 498
+37      6635    1.4     1       6187 448
+38      6854    1.4     1       6373 481
+39      7078    1.4     1       6603 475
+40      6271    1.4     1       5822 449
+41      7185    1.4     1       6715 470
+42      7237    1.4     1       6781 456
+43      7220    1.4     1       6737 483
+44      8441    1.4     1       7882 559
+45      7773    1.4     1       7287 486
+46      6799    1.4     1       6356 443
+47      8187    1.4     1       7671 516
+48      8165    1.4     1       7639 526
+49      8372    1.4     1       7865 507
+50      10178   1.4     1       9519 659
+51      11245   1.4     1       10590 655
+52      8970    1.4     1       8448 522
+53      10261   1.4     1       9646 615
+54      10231   1.4     1       9633 598
+55      8899    1.4     1       8336 563
+56      9928    1.4     1       9285 643
+57      10507   1.4     1       9844 663
+58      9826    1.4     1       9244 582
+59      11647   1.4     1       10975 672
+60      11044   1.4     1       10384 660
+61      9670    1.4     1       9106 564
+62      11585   1.4     1       10948 637
+63      15210   1.4     1       14394 816
+64      15626   1.4     1       14792 834
+65      19557   1.4     1       18542 1015
+66      20853   1.4     1       19768 1085
+67      13652   1.4     1       12898 754
+68      13067   1.4     1       12337 730
+69      14825   1.4     1       13977 848
+70      11780   1.4     1       11043 737
+71      12825   1.4     1       12069 756
+72      14736   1.4     1       13967 769
+73      13249   1.4     1       12567 682
+74      13851   1.4     1       13093 758
+75      15363   1.4     1       14561 802
+76      16027   1.4     1       15195 832
+77      16561   1.4     1       15699 862
+78      14808   1.4     1       14057 751
+79      12652   1.4     1       11972 680
+80      14376   1.4     1       13628 748
+81      15471   1.4     1       14714 757
+82      15717   1.4     1       14907 810
+83      18499   1.4     1       17543 956
+84      17329   1.4     1       16501 828
+85      14821   1.4     1       14059 762
+86      18541   1.4     1       17618 923
+87      19361   1.4     1       18480 881
+88      15941   1.4     1       15113 828
+89      20809   1.4     1       19709 1100
+90      19767   1.4     1       18861 906
+91      14440   1.4     1       13758 682
+92      20543   1.4     1       19509 1034
+93      29301   1.4     1       27911 1390
+94      21587   1.4     1       20530 1057
+95      16204   1.4     1       15448 756
+96      23421   1.4     1       22313 1108
+97      20882   1.4     1       19896 986
+98      14702   1.4     1       14001 701
+99      14732   1.4     1       14035 697
+100     12799   1.4     1       12142 657
+101     15466   1.4     1       14717 749
+102     14847   1.4     1       14171 676
+103     10898   1.4     1       10365 533
+104     12082   1.4     1       11487 595
+105     12829   1.4     1       12188 641
+106     8805    1.4     1       8336 469
+107     9584    1.4     1       9079 505
+108     8454    1.4     1       7997 457
+109     5402    1.4     1       5114 288
+110     5355    1.4     1       5061 294
+111     4815    1.4     1       4519 296
+112     3063    1.4     1       2898 165
+113     3318    1.4     1       3127 191
+114     1635    1.4     1       1530 105
+115     788     1.4     1       704 84
+116     425     1.4     1       365 60
+117     287     1.4     1       222 65
+118     129     1.4     1       44 85
+119     120     1.4     1       38 82
+120     135     1.4     1       68 67
+121     349     1.4     1       280 69
+122     62      1.4     1       10 52
+123     49      1.4     1       2 47
+124     97      1.4     1       5 92
+125     81      1.4     1       3 78
+126     77      1.4     1       4 73
+127     66      1.4     1       2 64
+128     59      1.4     1       1 58
+129     52      1.4     1       2 50
+130     63      1.4     1       1 62
+131     47      1.4     1       1 46
+132     18      1.4     1       0 18
+133     39      1.4     1       1 38
+134     61      1.4     1       0 61
+135     32      1.4     1       2 30
+136     36      1.4     1       0 36
+137     56      1.4     1       1 55
+138     59      1.4     1       0 59
+139     44      1.4     1       0 44
+140     29      1.4     1       0 29
+141     45      1.4     1       2 43
+142     43      1.4     1       0 43
+143     1103    1.4     1       1002 101
+144     1736    1.4     1       1629 107
+145     24      1.4     1       3 21
+146     29      1.4     1       10 19
+
+
+=== Second read: Adapter 2 ===
+
+Sequence: AGATCGGAAG; Type: regular 3'; Length: 10; Trimmed: 1173026 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10 bp: 1
+
+Bases preceding removed adapters:
+  A: 98.6%
+  C: 0.8%
+  G: 0.5%
+  T: 0.1%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by 'A' extremely often.
+    The provided adapter sequence could be incomplete at its 5' end.
+    Ignore this warning when trimming primers.
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+3       7094    22589.2 0       7094
+4       4053    5647.3  0       4053
+5       3704    1411.8  0       3704
+6       3462    353.0   0       3462
+7       3201    88.2    0       3201
+8       4337    22.1    0       4337
+9       4752    5.5     0       4736 16
+10      3709    1.4     1       3330 379
+11      3815    1.4     1       3534 281
+12      4264    1.4     1       3976 288
+13      3941    1.4     1       3656 285
+14      4918    1.4     1       4591 327
+15      4942    1.4     1       4600 342
+16      4053    1.4     1       3790 263
+17      6000    1.4     1       5660 340
+18      6754    1.4     1       6331 423
+19      5433    1.4     1       5123 310
+20      6120    1.4     1       5748 372
+21      5031    1.4     1       4747 284
+22      4825    1.4     1       4527 298
+23      5092    1.4     1       4765 327
+24      4922    1.4     1       4668 254
+25      5046    1.4     1       4763 283
+26      6121    1.4     1       5775 346
+27      6625    1.4     1       6271 354
+28      5543    1.4     1       5261 282
+29      6110    1.4     1       5759 351
+30      6182    1.4     1       5855 327
+31      5523    1.4     1       5224 299
+32      8983    1.4     1       8556 427
+33      9321    1.4     1       8843 478
+34      7399    1.4     1       7012 387
+35      7586    1.4     1       7211 375
+36      7282    1.4     1       6961 321
+37      6735    1.4     1       6396 339
+38      6954    1.4     1       6612 342
+39      7146    1.4     1       6819 327
+40      6329    1.4     1       6039 290
+41      7254    1.4     1       6931 323
+42      7303    1.4     1       6962 341
+43      7287    1.4     1       6954 333
+44      8525    1.4     1       8166 359
+45      7855    1.4     1       7515 340
+46      6858    1.4     1       6569 289
+47      8216    1.4     1       7886 330
+48      8199    1.4     1       7882 317
+49      8387    1.4     1       8083 304
+50      10186   1.4     1       9795 391
+51      11249   1.4     1       10851 398
+52      9012    1.4     1       8628 384
+53      10251   1.4     1       9870 381
+54      10260   1.4     1       9902 358
+55      8905    1.4     1       8587 318
+56      9953    1.4     1       9574 379
+57      10533   1.4     1       10127 406
+58      9862    1.4     1       9517 345
+59      11659   1.4     1       11223 436
+60      11064   1.4     1       10700 364
+61      9654    1.4     1       9306 348
+62      11604   1.4     1       11253 351
+63      15233   1.4     1       14713 520
+64      15618   1.4     1       15056 562
+65      19575   1.4     1       18915 660
+66      20894   1.4     1       20215 679
+67      13649   1.4     1       13183 466
+68      13100   1.4     1       12619 481
+69      14848   1.4     1       14297 551
+70      11741   1.4     1       11321 420
+71      12785   1.4     1       12345 440
+72      14722   1.4     1       14217 505
+73      13228   1.4     1       12796 432
+74      13778   1.4     1       13336 442
+75      15354   1.4     1       14820 534
+76      16008   1.4     1       15488 520
+77      16471   1.4     1       15964 507
+78      14812   1.4     1       14290 522
+79      12610   1.4     1       12166 444
+80      14279   1.4     1       13841 438
+81      15483   1.4     1       14955 528
+82      15685   1.4     1       15139 546
+83      18408   1.4     1       17745 663
+84      17311   1.4     1       16689 622
+85      14739   1.4     1       14281 458
+86      18498   1.4     1       17896 602
+87      19322   1.4     1       18708 614
+88      15857   1.4     1       15277 580
+89      20706   1.4     1       20048 658
+90      19743   1.4     1       19083 660
+91      14428   1.4     1       13973 455
+92      20484   1.4     1       19891 593
+93      29219   1.4     1       28374 845
+94      21528   1.4     1       20933 595
+95      16143   1.4     1       15657 486
+96      23444   1.4     1       22725 719
+97      20847   1.4     1       20240 607
+98      14676   1.4     1       14208 468
+99      14753   1.4     1       14304 449
+100     12792   1.4     1       12390 402
+101     15441   1.4     1       15002 439
+102     14851   1.4     1       14409 442
+103     10901   1.4     1       10538 363
+104     12018   1.4     1       11662 356
+105     12790   1.4     1       12406 384
+106     8778    1.4     1       8485 293
+107     9545    1.4     1       9266 279
+108     8446    1.4     1       8167 279
+109     5407    1.4     1       5191 216
+110     5340    1.4     1       5161 179
+111     4815    1.4     1       4610 205
+112     3056    1.4     1       2923 133
+113     3333    1.4     1       3189 144
+114     1656    1.4     1       1554 102
+115     772     1.4     1       711 61
+116     426     1.4     1       372 54
+117     271     1.4     1       215 56
+118     104     1.4     1       50 54
+119     118     1.4     1       35 83
+120     112     1.4     1       72 40
+121     357     1.4     1       284 73
+122     69      1.4     1       9 60
+123     76      1.4     1       3 73
+124     64      1.4     1       4 60
+125     61      1.4     1       3 58
+126     70      1.4     1       1 69
+127     46      1.4     1       0 46
+128     87      1.4     1       0 87
+129     79      1.4     1       1 78
+130     86      1.4     1       1 85
+131     96      1.4     1       5 91
+132     63      1.4     1       0 63
+133     52      1.4     1       2 50
+134     59      1.4     1       0 59
+135     95      1.4     1       1 94
+136     16      1.4     1       0 16
+137     20      1.4     1       0 20
+138     80      1.4     1       0 80
+139     61      1.4     1       0 61
+140     25      1.4     1       0 25
+141     104     1.4     1       2 102
+142     58      1.4     1       0 58
+143     1105    1.4     1       1019 86
+144     1764    1.4     1       1671 93
+145     50      1.4     1       3 47
+146     49      1.4     1       11 38
+
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ cutadapt -a AGATCGGAAG -A AGATCGGAAG -m 100 -o sampleB_R1.out.fq.gz -p sampleB_R2.out.fq.gz sampleB_R1.fq
+.gz sampleB_R2.fq.gz
+This is cutadapt 4.4 with Python 3.12.3
+Command line parameters: -a AGATCGGAAG -A AGATCGGAAG -m 100 -o sampleB_R1.out.fq.gz -p sampleB_R2.out.fq.gz sampleB_R1.fq.gz sampleB_R2.fq.gz
+Processing paired-end reads on 1 core ...
+Done           00:00:58     3,022,207 reads @  19.4 µs/read;   3.09 M reads/minute
+Finished in 58.601 s (19.390 µs/read; 3.09 M reads/minute).
+
+=== Summary ===
+
+Total read pairs processed:          3,022,207
+  Read 1 with adapter:                   6,813 (0.2%)
+  Read 2 with adapter:                   6,731 (0.2%)
+
+== Read fate breakdown ==
+Pairs that were too short:             990,043 (32.8%)
+Pairs written (passing filters):     2,032,164 (67.2%)
+
+Total basepairs processed:   701,969,545 bp
+  Read 1:   350,325,947 bp
+  Read 2:   351,643,598 bp
+Total written (filtered):    553,091,017 bp (78.8%)
+  Read 1:   276,437,254 bp
+  Read 2:   276,653,763 bp
+
+=== First read: Adapter 1 ===
+
+Sequence: AGATCGGAAG; Type: regular 3'; Length: 10; Trimmed: 6813 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10 bp: 1
+
+Bases preceding removed adapters:
+  A: 24.2%
+  C: 24.4%
+  G: 40.1%
+  T: 11.3%
+  none/other: 0.0%
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+3       906     47222.0 0       906
+4       130     11805.5 0       130
+5       302     2951.4  0       302
+6       25      737.8   0       25
+7       5       184.5   0       5
+9       2       11.5    0       0 2
+10      85      2.9     1       0 85
+12      54      2.9     1       0 54
+13      107     2.9     1       0 107
+14      180     2.9     1       0 180
+15      55      2.9     1       0 55
+16      85      2.9     1       0 85
+17      76      2.9     1       0 76
+18      92      2.9     1       0 92
+19      60      2.9     1       0 60
+20      85      2.9     1       0 85
+21      116     2.9     1       0 116
+22      52      2.9     1       0 52
+23      94      2.9     1       0 94
+24      74      2.9     1       0 74
+25      46      2.9     1       0 46
+26      98      2.9     1       0 98
+27      81      2.9     1       0 81
+28      36      2.9     1       0 36
+29      67      2.9     1       0 67
+30      92      2.9     1       0 92
+31      77      2.9     1       0 77
+32      78      2.9     1       0 78
+33      39      2.9     1       0 39
+34      66      2.9     1       0 66
+35      37      2.9     1       0 37
+36      86      2.9     1       0 86
+37      99      2.9     1       0 99
+38      112     2.9     1       0 112
+39      46      2.9     1       0 46
+40      54      2.9     1       0 54
+41      36      2.9     1       0 36
+42      26      2.9     1       0 26
+43      96      2.9     1       0 96
+44      84      2.9     1       0 84
+45      95      2.9     1       0 95
+46      56      2.9     1       0 56
+47      116     2.9     1       0 116
+48      65      2.9     1       0 65
+49      17      2.9     1       0 17
+50      49      2.9     1       0 49
+51      99      2.9     1       0 99
+52      64      2.9     1       0 64
+53      72      2.9     1       0 72
+54      79      2.9     1       0 79
+55      13      2.9     1       0 13
+56      83      2.9     1       0 83
+57      37      2.9     1       0 37
+58      73      2.9     1       0 73
+59      61      2.9     1       0 61
+60      69      2.9     1       0 69
+61      55      2.9     1       0 55
+62      31      2.9     1       0 31
+63      68      2.9     1       0 68
+64      45      2.9     1       0 45
+65      49      2.9     1       0 49
+66      63      2.9     1       0 63
+67      50      2.9     1       0 50
+68      44      2.9     1       0 44
+69      28      2.9     1       0 28
+70      39      2.9     1       0 39
+71      13      2.9     1       0 13
+72      82      2.9     1       0 82
+73      22      2.9     1       0 22
+74      37      2.9     1       0 37
+75      17      2.9     1       0 17
+76      43      2.9     1       0 43
+77      25      2.9     1       0 25
+78      55      2.9     1       0 55
+79      34      2.9     1       0 34
+80      36      2.9     1       0 36
+81      34      2.9     1       0 34
+82      31      2.9     1       0 31
+83      57      2.9     1       0 57
+84      67      2.9     1       0 67
+85      50      2.9     1       0 50
+86      22      2.9     1       0 22
+87      24      2.9     1       0 24
+88      37      2.9     1       0 37
+89      28      2.9     1       0 28
+90      21      2.9     1       0 21
+91      12      2.9     1       0 12
+92      53      2.9     1       0 53
+93      15      2.9     1       0 15
+94      55      2.9     1       0 55
+95      21      2.9     1       0 21
+96      48      2.9     1       0 48
+97      29      2.9     1       0 29
+98      28      2.9     1       0 28
+99      22      2.9     1       0 22
+100     6       2.9     1       0 6
+101     14      2.9     1       0 14
+102     16      2.9     1       0 16
+103     11      2.9     1       0 11
+104     37      2.9     1       0 37
+105     19      2.9     1       0 19
+106     7       2.9     1       0 7
+107     5       2.9     1       0 5
+110     35      2.9     1       0 35
+111     12      2.9     1       0 12
+112     18      2.9     1       0 18
+113     7       2.9     1       0 7
+114     7       2.9     1       0 7
+115     13      2.9     1       0 13
+116     10      2.9     1       0 10
+117     20      2.9     1       0 20
+118     13      2.9     1       0 13
+119     9       2.9     1       0 9
+120     9       2.9     1       0 9
+122     15      2.9     1       0 15
+123     7       2.9     1       0 7
+124     5       2.9     1       0 5
+125     12      2.9     1       0 12
+126     12      2.9     1       0 12
+129     2       2.9     1       0 2
+130     13      2.9     1       0 13
+
+
+=== Second read: Adapter 2 ===
+
+Sequence: AGATCGGAAG; Type: regular 3'; Length: 10; Trimmed: 6731 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-9 bp: 0; 10 bp: 1
+
+Bases preceding removed adapters:
+  A: 25.8%
+  C: 21.2%
+  G: 40.3%
+  T: 12.5%
+  none/other: 0.2%
+
+Overview of removed sequences
+length  count   expect  max.err error counts
+3       1051    47222.0 0       1051
+4       296     11805.5 0       296
+5       89      2951.4  0       89
+6       24      737.8   0       24
+17      45      2.9     1       0 45
+19      76      2.9     1       0 76
+20      76      2.9     1       0 76
+21      142     2.9     1       0 142
+22      45      2.9     1       0 45
+23      79      2.9     1       0 79
+24      90      2.9     1       0 90
+25      71      2.9     1       0 71
+26      47      2.9     1       0 47
+27      72      2.9     1       0 72
+28      150     2.9     1       0 150
+29      43      2.9     1       0 43
+30      48      2.9     1       0 48
+31      31      2.9     1       0 31
+32      42      2.9     1       0 42
+33      91      2.9     1       0 91
+34      58      2.9     1       0 58
+35      47      2.9     1       0 47
+36      55      2.9     1       0 55
+37      91      2.9     1       0 91
+38      76      2.9     1       0 76
+39      79      2.9     1       0 79
+40      63      2.9     1       0 63
+41      58      2.9     1       0 58
+42      48      2.9     1       0 48
+43      31      2.9     1       0 31
+44      75      2.9     1       0 75
+45      107     2.9     1       0 107
+46      48      2.9     1       0 48
+47      82      2.9     1       0 82
+48      47      2.9     1       0 47
+49      37      2.9     1       0 37
+50      173     2.9     1       0 173
+51      54      2.9     1       0 54
+52      79      2.9     1       0 79
+53      41      2.9     1       0 41
+54      97      2.9     1       0 97
+55      65      2.9     1       0 65
+56      25      2.9     1       0 25
+57      53      2.9     1       0 53
+58      93      2.9     1       0 93
+59      71      2.9     1       0 71
+60      50      2.9     1       0 50
+61      80      2.9     1       0 80
+62      11      2.9     1       0 11
+63      60      2.9     1       0 60
+64      54      2.9     1       0 54
+65      70      2.9     1       0 70
+66      78      2.9     1       0 78
+67      80      2.9     1       0 80
+68      46      2.9     1       0 46
+69      54      2.9     1       0 54
+70      36      2.9     1       0 36
+71      53      2.9     1       0 53
+72      57      2.9     1       0 57
+73      78      2.9     1       0 78
+74      46      2.9     1       0 46
+75      82      2.9     1       0 82
+76      36      2.9     1       0 36
+77      49      2.9     1       0 49
+78      24      2.9     1       0 24
+79      70      2.9     1       0 70
+80      24      2.9     1       0 24
+81      48      2.9     1       0 48
+82      26      2.9     1       0 26
+83      34      2.9     1       0 34
+84      35      2.9     1       0 35
+85      46      2.9     1       0 46
+86      27      2.9     1       0 27
+87      81      2.9     1       0 81
+88      40      2.9     1       0 40
+89      23      2.9     1       0 23
+90      67      2.9     1       0 67
+91      48      2.9     1       0 48
+92      71      2.9     1       0 71
+93      18      2.9     1       0 18
+94      18      2.9     1       0 18
+95      16      2.9     1       0 16
+96      24      2.9     1       0 24
+97      27      2.9     1       0 27
+98      14      2.9     1       0 14
+99      46      2.9     1       0 46
+100     26      2.9     1       0 26
+101     42      2.9     1       0 42
+102     25      2.9     1       0 25
+103     45      2.9     1       0 45
+104     10      2.9     1       0 10
+105     34      2.9     1       0 34
+106     33      2.9     1       0 33
+107     18      2.9     1       0 18
+108     4       2.9     1       0 4
+109     29      2.9     1       0 29
+110     4       2.9     1       0 4
+111     31      2.9     1       0 31
+112     32      2.9     1       0 32
+113     10      2.9     1       0 10
+114     13      2.9     1       0 13
+115     3       2.9     1       0 3
+116     2       2.9     1       0 2
+117     34      2.9     1       0 34
+118     6       2.9     1       0 6
+119     1       2.9     1       0 1
+120     10      2.9     1       0 10
+121     13      2.9     1       0 13
+122     18      2.9     1       0 18
+123     4       2.9     1       0 4
+124     6       2.9     1       0 6
+125     11      2.9     1       0 11
+126     21      2.9     1       0 21
+127     3       2.9     1       0 3
+129     13      2.9     1       0 13
+130     3       2.9     1       0 3
+131     10      2.9     1       0 10
+132     3       2.9     1       0 3
+133     6       2.9     1       0 6
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ fastqc sampleA_R1.out.fq.gz
+application/gzip
+Started analysis of sampleA_R1.out.fq.gz
+Approx 5% complete for sampleA_R1.out.fq.gz
+Approx 10% complete for sampleA_R1.out.fq.gz
+Approx 15% complete for sampleA_R1.out.fq.gz
+Approx 20% complete for sampleA_R1.out.fq.gz
+Approx 25% complete for sampleA_R1.out.fq.gz
+Approx 30% complete for sampleA_R1.out.fq.gz
+Approx 35% complete for sampleA_R1.out.fq.gz
+Approx 40% complete for sampleA_R1.out.fq.gz
+Approx 45% complete for sampleA_R1.out.fq.gz
+Approx 50% complete for sampleA_R1.out.fq.gz
+Approx 55% complete for sampleA_R1.out.fq.gz
+Approx 60% complete for sampleA_R1.out.fq.gz
+Approx 65% complete for sampleA_R1.out.fq.gz
+Approx 70% complete for sampleA_R1.out.fq.gz
+Approx 75% complete for sampleA_R1.out.fq.gz
+Approx 80% complete for sampleA_R1.out.fq.gz
+Approx 85% complete for sampleA_R1.out.fq.gz
+Approx 90% complete for sampleA_R1.out.fq.gz
+Approx 95% complete for sampleA_R1.out.fq.gz
+Analysis complete for sampleA_R1.out.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ fastqc sampleA_R2.out.fq.gz
+application/gzip
+Started analysis of sampleA_R2.out.fq.gz
+Approx 5% complete for sampleA_R2.out.fq.gz
+Approx 10% complete for sampleA_R2.out.fq.gz
+Approx 15% complete for sampleA_R2.out.fq.gz
+Approx 20% complete for sampleA_R2.out.fq.gz
+Approx 25% complete for sampleA_R2.out.fq.gz
+Approx 30% complete for sampleA_R2.out.fq.gz
+Approx 35% complete for sampleA_R2.out.fq.gz
+Approx 40% complete for sampleA_R2.out.fq.gz
+Approx 45% complete for sampleA_R2.out.fq.gz
+Approx 50% complete for sampleA_R2.out.fq.gz
+Approx 55% complete for sampleA_R2.out.fq.gz
+Approx 60% complete for sampleA_R2.out.fq.gz
+Approx 65% complete for sampleA_R2.out.fq.gz
+Approx 70% complete for sampleA_R2.out.fq.gz
+Approx 75% complete for sampleA_R2.out.fq.gz
+Approx 80% complete for sampleA_R2.out.fq.gz
+Approx 85% complete for sampleA_R2.out.fq.gz
+Approx 90% complete for sampleA_R2.out.fq.gz
+Approx 95% complete for sampleA_R2.out.fq.gz
+Analysis complete for sampleA_R2.out.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ fastqc sampleB_R1.out.fq.gz
+application/gzip
+Started analysis of sampleB_R1.out.fq.gz
+Approx 5% complete for sampleB_R1.out.fq.gz
+Approx 10% complete for sampleB_R1.out.fq.gz
+Approx 15% complete for sampleB_R1.out.fq.gz
+Approx 20% complete for sampleB_R1.out.fq.gz
+Approx 25% complete for sampleB_R1.out.fq.gz
+Approx 30% complete for sampleB_R1.out.fq.gz
+Approx 35% complete for sampleB_R1.out.fq.gz
+Approx 40% complete for sampleB_R1.out.fq.gz
+Approx 45% complete for sampleB_R1.out.fq.gz
+Approx 50% complete for sampleB_R1.out.fq.gz
+Approx 55% complete for sampleB_R1.out.fq.gz
+Approx 60% complete for sampleB_R1.out.fq.gz
+Approx 65% complete for sampleB_R1.out.fq.gz
+Approx 70% complete for sampleB_R1.out.fq.gz
+Approx 75% complete for sampleB_R1.out.fq.gz
+Approx 80% complete for sampleB_R1.out.fq.gz
+Approx 85% complete for sampleB_R1.out.fq.gz
+Approx 90% complete for sampleB_R1.out.fq.gz
+Approx 95% complete for sampleB_R1.out.fq.gz
+Analysis complete for sampleB_R1.out.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$ fastqc sampleB_R2.out.fq.gz
+application/gzip
+Started analysis of sampleB_R2.out.fq.gz
+Approx 5% complete for sampleB_R2.out.fq.gz
+Approx 10% complete for sampleB_R2.out.fq.gz
+Approx 15% complete for sampleB_R2.out.fq.gz
+Approx 20% complete for sampleB_R2.out.fq.gz
+Approx 25% complete for sampleB_R2.out.fq.gz
+Approx 30% complete for sampleB_R2.out.fq.gz
+Approx 35% complete for sampleB_R2.out.fq.gz
+Approx 40% complete for sampleB_R2.out.fq.gz
+Approx 45% complete for sampleB_R2.out.fq.gz
+Approx 50% complete for sampleB_R2.out.fq.gz
+Approx 55% complete for sampleB_R2.out.fq.gz
+Approx 60% complete for sampleB_R2.out.fq.gz
+Approx 65% complete for sampleB_R2.out.fq.gz
+Approx 70% complete for sampleB_R2.out.fq.gz
+Approx 75% complete for sampleB_R2.out.fq.gz
+Approx 80% complete for sampleB_R2.out.fq.gz
+Approx 85% complete for sampleB_R2.out.fq.gz
+Approx 90% complete for sampleB_R2.out.fq.gz
+Approx 95% complete for sampleB_R2.out.fq.gz
+Analysis complete for sampleB_R2.out.fq.gz
+(base) ramyamadabathula@H107-PN-LT:~/NGS_practice$
