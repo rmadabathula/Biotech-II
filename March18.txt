@@ -1,0 +1,367 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Mar 18 17:48:10 EDT 2025
+
+  System load:  0.48                Processes:             71
+  Usage of /:   2.6% of 1006.85GB   Users logged in:       0
+  Memory usage: 5%                  IPv4 address for eth0: 172.29.52.191
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/ramyamadabathula/.hushlogin file.
+(base) ramyamadabathula@H107-PN-LT:~$ ls
+ Log.out                               Pipeline_Seq       auto_trim.sh     biotech_class.txt      hs_err_pid128238.log           practice_folder
+ Miniconda3-latest-Linux-x86_64.sh     RNA_Seq_Analysis   auto_trim.sh.1   eol.sh                 index.html.1                   ram
+ Miniconda3-latest-Linux-x86_64.sh.1   RNAstar.sh         auto_trim.sh.2   fastq                  index.html.2                   test.sh
+ NGS_practice                          RNAstar.sh.1       auto_trim.sh.3   fastq_download.py     'index.html?page=trimmomatic'
+ NGS_practice.zip                      RNAstar.sh.2       bam_list.txt     hs_err_pid128084.log   loop.sh
+ NGS_practice.zip:Zone.Identifier      RNAstar.sh.3       biotech_II.txt   hs_err_pid128150.log   miniconda3
+(base) ramyamadabathula@H107-PN-LT:~$ wget https://github.com/GwonjinLee/BiotechII/releases/download/RNAseq/RNAseq_data.zip
+--2025-03-18 17:49:05--  https://github.com/GwonjinLee/BiotechII/releases/download/RNAseq/RNAseq_data.zip
+Resolving github.com (github.com)... 140.82.112.3
+Connecting to github.com (github.com)|140.82.112.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/920315734/6c8cf7c0-a29e-4307-8da2-2a4f5ee66787?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250318%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250318T214755Z&X-Amz-Expires=300&X-Amz-Signature=0bd418178c40043f069e05a704e1936c2521a36ae24cc5bc35dcb149533be7d2&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DRNAseq_data.zip&response-content-type=application%2Foctet-stream [following]
+--2025-03-18 17:49:06--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/920315734/6c8cf7c0-a29e-4307-8da2-2a4f5ee66787?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250318%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250318T214755Z&X-Amz-Expires=300&X-Amz-Signature=0bd418178c40043f069e05a704e1936c2521a36ae24cc5bc35dcb149533be7d2&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DRNAseq_data.zip&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 468500417 (447M) [application/octet-stream]
+Saving to: ‘RNAseq_data.zip’
+
+RNAseq_data.zip                        100%[============================================================================>] 446.80M   654KB/s    in 5m 47s
+
+2025-03-18 17:54:33 (1.29 MB/s) - ‘RNAseq_data.zip’ saved [468500417/468500417]
+
+(base) ramyamadabathula@H107-PN-LT:~$ ls
+ Log.out                               Pipeline_Seq       RNAstar.sh.3     biotech_II.txt         hs_err_pid128150.log           miniconda3
+ Miniconda3-latest-Linux-x86_64.sh     RNA_Seq_Analysis   auto_trim.sh     biotech_class.txt      hs_err_pid128238.log           practice_folder
+ Miniconda3-latest-Linux-x86_64.sh.1   RNAseq_data.zip    auto_trim.sh.1   eol.sh                 index.html.1                   ram
+ NGS_practice                          RNAstar.sh         auto_trim.sh.2   fastq                  index.html.2                   test.sh
+ NGS_practice.zip                      RNAstar.sh.1       auto_trim.sh.3   fastq_download.py     'index.html?page=trimmomatic'
+ NGS_practice.zip:Zone.Identifier      RNAstar.sh.2       bam_list.txt     hs_err_pid128084.log   loop.sh
+(base) ramyamadabathula@H107-PN-LT:~$ unzip RNAseq_data.zip
+Archive:  RNAseq_data.zip
+   creating: RNAseq_data/
+   creating: RNAseq_data/samples/
+  inflating: RNAseq_data/samples/SAMPLE1_R2.fastq.gz
+  inflating: RNAseq_data/samples/SAMPLE1_R1.fastq.gz
+  inflating: RNAseq_data/samples/SAMPLE2_R2.fastq.gz
+  inflating: RNAseq_data/samples/SAMPLE2_R1.fastq.gz
+   creating: RNAseq_data/genes/
+  inflating: RNAseq_data/genes/chrX.gtf
+   creating: RNAseq_data/genome/
+  inflating: RNAseq_data/genome/chrX.fa
+   creating: RNAseq_data/indexes/
+  inflating: RNAseq_data/indexes/chrX_tran.8.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.1.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.3.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.7.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.5.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.2.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.6.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.4.ht2
+(base) ramyamadabathula@H107-PN-LT:~$ ls
+ Log.out                               Pipeline_Seq       RNAstar.sh.2     bam_list.txt        hs_err_pid128084.log           loop.sh
+ Miniconda3-latest-Linux-x86_64.sh     RNA_Seq_Analysis   RNAstar.sh.3     biotech_II.txt      hs_err_pid128150.log           miniconda3
+ Miniconda3-latest-Linux-x86_64.sh.1   RNAseq_data        auto_trim.sh     biotech_class.txt   hs_err_pid128238.log           practice_folder
+ NGS_practice                          RNAseq_data.zip    auto_trim.sh.1   eol.sh              index.html.1                   ram
+ NGS_practice.zip                      RNAstar.sh         auto_trim.sh.2   fastq               index.html.2                   test.sh
+ NGS_practice.zip:Zone.Identifier      RNAstar.sh.1       auto_trim.sh.3   fastq_download.py  'index.html?page=trimmomatic'
+(base) ramyamadabathula@H107-PN-LT:~$ cd /home/ramyamadabathula/RNAseq_data/
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ cd /home/ramyamadabathula/RNAseq_data/samples/
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ ls
+SAMPLE1_R1.fastq.gz  SAMPLE1_R2.fastq.gz  SAMPLE2_R1.fastq.gz  SAMPLE2_R2.fastq.gz
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ fastqc SAMPLE1_R1.fastq.gz
+application/gzip
+Started analysis of SAMPLE1_R1.fastq.gz
+Approx 5% complete for SAMPLE1_R1.fastq.gz
+Approx 10% complete for SAMPLE1_R1.fastq.gz
+Approx 15% complete for SAMPLE1_R1.fastq.gz
+Approx 20% complete for SAMPLE1_R1.fastq.gz
+Approx 25% complete for SAMPLE1_R1.fastq.gz
+Approx 30% complete for SAMPLE1_R1.fastq.gz
+Approx 35% complete for SAMPLE1_R1.fastq.gz
+Approx 40% complete for SAMPLE1_R1.fastq.gz
+Approx 45% complete for SAMPLE1_R1.fastq.gz
+Approx 50% complete for SAMPLE1_R1.fastq.gz
+Approx 55% complete for SAMPLE1_R1.fastq.gz
+Approx 60% complete for SAMPLE1_R1.fastq.gz
+Approx 65% complete for SAMPLE1_R1.fastq.gz
+Approx 70% complete for SAMPLE1_R1.fastq.gz
+Approx 75% complete for SAMPLE1_R1.fastq.gz
+Approx 80% complete for SAMPLE1_R1.fastq.gz
+Approx 85% complete for SAMPLE1_R1.fastq.gz
+Approx 90% complete for SAMPLE1_R1.fastq.gz
+Approx 95% complete for SAMPLE1_R1.fastq.gz
+Analysis complete for SAMPLE1_R1.fastq.gz
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ fastqc SAMPLE1_R2.fastq.gz
+application/gzip
+Started analysis of SAMPLE1_R2.fastq.gz
+Approx 5% complete for SAMPLE1_R2.fastq.gz
+Approx 10% complete for SAMPLE1_R2.fastq.gz
+Approx 15% complete for SAMPLE1_R2.fastq.gz
+Approx 20% complete for SAMPLE1_R2.fastq.gz
+Approx 25% complete for SAMPLE1_R2.fastq.gz
+Approx 30% complete for SAMPLE1_R2.fastq.gz
+Approx 35% complete for SAMPLE1_R2.fastq.gz
+Approx 40% complete for SAMPLE1_R2.fastq.gz
+Approx 45% complete for SAMPLE1_R2.fastq.gz
+Approx 50% complete for SAMPLE1_R2.fastq.gz
+Approx 55% complete for SAMPLE1_R2.fastq.gz
+Approx 60% complete for SAMPLE1_R2.fastq.gz
+Approx 65% complete for SAMPLE1_R2.fastq.gz
+Approx 70% complete for SAMPLE1_R2.fastq.gz
+Approx 75% complete for SAMPLE1_R2.fastq.gz
+Approx 80% complete for SAMPLE1_R2.fastq.gz
+Approx 85% complete for SAMPLE1_R2.fastq.gz
+Approx 90% complete for SAMPLE1_R2.fastq.gz
+Approx 95% complete for SAMPLE1_R2.fastq.gz
+Analysis complete for SAMPLE1_R2.fastq.gz
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ fastqc SAMPLE2_R1.fastq.gz
+application/gzip
+Started analysis of SAMPLE2_R1.fastq.gz
+Approx 5% complete for SAMPLE2_R1.fastq.gz
+Approx 10% complete for SAMPLE2_R1.fastq.gz
+Approx 15% complete for SAMPLE2_R1.fastq.gz
+Approx 20% complete for SAMPLE2_R1.fastq.gz
+Approx 25% complete for SAMPLE2_R1.fastq.gz
+Approx 30% complete for SAMPLE2_R1.fastq.gz
+Approx 35% complete for SAMPLE2_R1.fastq.gz
+Approx 40% complete for SAMPLE2_R1.fastq.gz
+Approx 45% complete for SAMPLE2_R1.fastq.gz
+Approx 50% complete for SAMPLE2_R1.fastq.gz
+Approx 55% complete for SAMPLE2_R1.fastq.gz
+Approx 60% complete for SAMPLE2_R1.fastq.gz
+Approx 65% complete for SAMPLE2_R1.fastq.gz
+Approx 70% complete for SAMPLE2_R1.fastq.gz
+Approx 75% complete for SAMPLE2_R1.fastq.gz
+Approx 80% complete for SAMPLE2_R1.fastq.gz
+Approx 85% complete for SAMPLE2_R1.fastq.gz
+Approx 90% complete for SAMPLE2_R1.fastq.gz
+Approx 95% complete for SAMPLE2_R1.fastq.gz
+Analysis complete for SAMPLE2_R1.fastq.gz
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ fastqc SAMPLE2_R2.fastq.gz
+application/gzip
+Started analysis of SAMPLE2_R2.fastq.gz
+Approx 5% complete for SAMPLE2_R2.fastq.gz
+Approx 10% complete for SAMPLE2_R2.fastq.gz
+Approx 15% complete for SAMPLE2_R2.fastq.gz
+Approx 20% complete for SAMPLE2_R2.fastq.gz
+Approx 25% complete for SAMPLE2_R2.fastq.gz
+Approx 30% complete for SAMPLE2_R2.fastq.gz
+Approx 35% complete for SAMPLE2_R2.fastq.gz
+Approx 40% complete for SAMPLE2_R2.fastq.gz
+Approx 45% complete for SAMPLE2_R2.fastq.gz
+Approx 50% complete for SAMPLE2_R2.fastq.gz
+Approx 55% complete for SAMPLE2_R2.fastq.gz
+Approx 60% complete for SAMPLE2_R2.fastq.gz
+Approx 65% complete for SAMPLE2_R2.fastq.gz
+Approx 70% complete for SAMPLE2_R2.fastq.gz
+Approx 75% complete for SAMPLE2_R2.fastq.gz
+Approx 80% complete for SAMPLE2_R2.fastq.gz
+Approx 85% complete for SAMPLE2_R2.fastq.gz
+Approx 90% complete for SAMPLE2_R2.fastq.gz
+Approx 95% complete for SAMPLE2_R2.fastq.gz
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE1_R1.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz
+(ERR): Read file 'samples/SAMPLE1_R1.fastq.gz' doesn't exist
+Exiting now ...LE1_R2.fastq.gz
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$  hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE1_R1.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz
+(ERR): Read file 'samples/SAMPLE1_R1.fastq.gz' doesn't exist
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ ls
+SAMPLE1_R1.fastq.gz     SAMPLE1_R1_fastqc.zip  SAMPLE1_R2_fastqc.html  SAMPLE2_R1.fastq.gz     SAMPLE2_R1_fastqc.zip  SAMPLE2_R2_fastqc.html
+SAMPLE1_R1_fastqc.html  SAMPLE1_R2.fastq.gz    SAMPLE1_R2_fastqc.zip   SAMPLE2_R1_fastqc.html  SAMPLE2_R2.fastq.gz    SAMPLE2_R2_fastqc.zip
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE1_R1.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz
+(ERR): Read file 'samples/SAMPLE1_R1.fastq.gz' doesn't exist
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 SAMPLE1_R1.fastq.gz -2 SAMPLE1_R2.fastq.gz -2
+samples/SAMPLE1_R2.fastq.gz
+(ERR): Read file 'samples/SAMPLE1_R2.fastq.gz' doesn't exist
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 SAMPLE1_R1.fastq.gz -2 SAMPLE1_R2.fastq.gz -2
+SAMPLE1_R2.fastq.gz
+(ERR): Argument expected in next token!
+Exiting now ...
+SAMPLE1_R2.fastq.gz: command not found
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$  hisat2 -p 8 --no-unal --dta -x /home/ramayamadabathula/RNAseq_data/indexes/chrX_tran -1 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R1.fastq.gz -2 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R2.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz
+(ERR): Read file 'samples/SAMPLE1_R2.fastq.gz' doesn't exist
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ ls
+SAMPLE1_R1.fastq.gz     SAMPLE1_R1_fastqc.zip  SAMPLE1_R2_fastqc.html  SAMPLE2_R1.fastq.gz     SAMPLE2_R1_fastqc.zip  SAMPLE2_R2_fastqc.html
+SAMPLE1_R1_fastqc.html  SAMPLE1_R2.fastq.gz    SAMPLE1_R2_fastqc.zip   SAMPLE2_R1_fastqc.html  SAMPLE2_R2.fastq.gz    SAMPLE2_R2_fastqc.zip
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE1_R1.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz -S SAMPLE1.sam
+(ERR): Read file 'samples/SAMPLE1_R1.fastq.gz' doesn't exist
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ hisat2 -p 8 --no-unal --dta -x /home/ramayamadabathula/RNAseq_data/indexes/chrX_tran -1 SAMPLE1_R1.fastq.gz -2 SAMPLE1_R2.fastq.gz -2
+SAMPLE1_R2.fastq.gz
+(ERR): Argument expected in next token!
+Exiting now ...
+SAMPLE1_R2.fastq.gz: command not found
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/samples$ cd ..
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ hisat2 -p 8 --no-unal --dta -x /home/ramayamadabathula/RNAseq_data/indexes/chrX_tran -1 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R1.fastq.gz -2 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R2.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz
+(ERR): Different number of files specified with --reads/-1 as with -2
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$  hisat2 -p 8 --no-unal --dta -x /home/ramayamadabathula/RNAseq_data/indexes/chrX_tran -1 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R1.fastq.gz -2 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R2.fastq.gz -2 /home/ramyamadabathula/RNAseq_data/sample
+s/SAMPLE1_R2.fastq.gz
+(ERR): Different number of files specified with --reads/-1 as with -2
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ hisat2 -p 8 --no-unal --dta -x /home/ramayamadabathula/RNAseq_data/indexes/chrX_tran -1 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R1.fastq.gz -2 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R2.fastq.gz
+(ERR): "/home/ramayamadabathula/RNAseq_data/indexes/chrX_tran" does not exist
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ hisat2 -p 8 --no-unal --dta -x /home/ramayamadabathula/RNAseq_data/indexes/chrX_tran -1 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R1.fastq.gz -2 /home/ramyamadabathula/RNAseq_data/samples/SAMPLE1_R2.fastq.gz -S SAMPLE1.sam
+(ERR): "/home/ramayamadabathula/RNAseq_data/indexes/chrX_tran" does not exist
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ cd indexes/
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/indexes$ ls
+chrX_tran.1.ht2  chrX_tran.2.ht2  chrX_tran.3.ht2  chrX_tran.4.ht2  chrX_tran.5.ht2  chrX_tran.6.ht2  chrX_tran.7.ht2  chrX_tran.8.ht2
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/indexes$ cd ..
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ pwd
+/home/ramyamadabathula/RNAseq_data
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE1_R1.fastq.gz -2 samples/SAMPLE1_R2.fast
+q.gz -S SAMPLE1.sam
+580042 reads; of these:
+  580042 (100.00%) were paired; of these:
+    49702 (8.57%) aligned concordantly 0 times
+    525184 (90.54%) aligned concordantly exactly 1 time
+    5156 (0.89%) aligned concordantly >1 times
+    ----
+    49702 pairs aligned concordantly 0 times; of these:
+      1358 (2.73%) aligned discordantly 1 time
+    ----
+    48344 pairs aligned 0 times concordantly or discordantly; of these:
+      96688 mates make up the pairs; of these:
+        49496 (51.19%) aligned 0 times
+        46162 (47.74%) aligned exactly 1 time
+        1030 (1.07%) aligned >1 times
+95.73% overall alignment rate
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE2_R1.fastq.gz -2 samples/SAMPLE2_R2.fast
+q.gz -S SAMPLE2.sam --summary-file summary/SAMPLE2.txt
+843202 reads; of these:
+  843202 (100.00%) were paired; of these:
+    63894 (7.58%) aligned concordantly 0 times
+    771068 (91.45%) aligned concordantly exactly 1 time
+    8240 (0.98%) aligned concordantly >1 times
+    ----
+    63894 pairs aligned concordantly 0 times; of these:
+      2053 (3.21%) aligned discordantly 1 time
+    ----
+    61841 pairs aligned 0 times concordantly or discordantly; of these:
+      123682 mates make up the pairs; of these:
+        62496 (50.53%) aligned 0 times
+        59739 (48.30%) aligned exactly 1 time
+        1447 (1.17%) aligned >1 times
+96.29% overall alignment rate
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+SAMPLE1.sam  SAMPLE2.sam  genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls summary/
+ls: cannot access 'summary/': No such file or directory
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE2_R1.fastq.gz -2 samples/SAMPLE2_R2.fastq.gz -S SAMPLE2.sam --summary-file SAMPLE2.txt
+843202 reads; of these:
+  843202 (100.00%) were paired; of these:
+    63894 (7.58%) aligned concordantly 0 times
+    771068 (91.45%) aligned concordantly exactly 1 time
+    8240 (0.98%) aligned concordantly >1 times
+    ----
+    63894 pairs aligned concordantly 0 times; of these:
+      2053 (3.21%) aligned discordantly 1 time
+    ----
+    61841 pairs aligned 0 times concordantly or discordantly; of these:
+      123682 mates make up the pairs; of these:
+        62496 (50.53%) aligned 0 times
+        59739 (48.30%) aligned exactly 1 time
+        1447 (1.17%) aligned >1 times
+96.29% overall alignment rate
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+SAMPLE1.sam  SAMPLE2.sam  SAMPLE2.txt  genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ less SAMPLE2.txt
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+SAMPLE1.sam  SAMPLE2.sam  SAMPLE2.txt  genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ rm SAMPLE1.sam
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ rm SAMPLE2.sam
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ rm SAMPLE2.txt
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ mkdir SAM
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ LS
+LS: command not found
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+SAM  genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ mkdir Summary
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+SAM  Summary  genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ nano bash.sh
+
+
+
+
+
+
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+SAM  Summary  bash.sh  genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ bash.sh
+bash.sh: command not found
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ bash bash.sh
+(ERR): Could not open output file 'Sam/SAMPLE1.sam' for writing.
+Exiting now ...
+(ERR): Could not open output file 'Sam/SAMPLE2.sam' for writing.
+Exiting now ...
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+SAM  Summary  bash.sh  genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ nano bash.sh
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ bash bash.sh
+580042 reads; of these:
+  580042 (100.00%) were paired; of these:
+    49702 (8.57%) aligned concordantly 0 times
+    525184 (90.54%) aligned concordantly exactly 1 time
+    5156 (0.89%) aligned concordantly >1 times
+    ----
+    49702 pairs aligned concordantly 0 times; of these:
+      1358 (2.73%) aligned discordantly 1 time
+    ----
+    48344 pairs aligned 0 times concordantly or discordantly; of these:
+      96688 mates make up the pairs; of these:
+        49496 (51.19%) aligned 0 times
+        46162 (47.74%) aligned exactly 1 time
+        1030 (1.07%) aligned >1 times
+95.73% overall alignment rate
+843202 reads; of these:
+  843202 (100.00%) were paired; of these:
+    63894 (7.58%) aligned concordantly 0 times
+    771068 (91.45%) aligned concordantly exactly 1 time
+    8240 (0.98%) aligned concordantly >1 times
+    ----
+    63894 pairs aligned concordantly 0 times; of these:
+      2053 (3.21%) aligned discordantly 1 time
+    ----
+    61841 pairs aligned 0 times concordantly or discordantly; of these:
+      123682 mates make up the pairs; of these:
+        62496 (50.53%) aligned 0 times
+        59739 (48.30%) aligned exactly 1 time
+        1447 (1.17%) aligned >1 times
+96.29% overall alignment rate
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ ls
+SAM  Summary  bash.sh  genes  genome  indexes  samples
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ cd SAM/
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/SAM$ LS
+LS: command not found
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/SAM$ ls
+SAMPLE1.sam  SAMPLE2.sam
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/SAM$ cd ..
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data$ cd Summary/
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/Summary$ ls
+SAMPLE1_Summary.txt  SAMPLE2_Summary.txt
+(base) ramyamadabathula@H107-PN-LT:~/RNAseq_data/Summary$
